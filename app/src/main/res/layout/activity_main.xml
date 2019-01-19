@@ -5,36 +5,23 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:visibility="visible"
-    android:padding="16dp"
+    android:background="@color/colorAccent"
     android:orientation="vertical"
+    android:padding="16dp"
+    android:visibility="visible"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/edit_text_title"
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Title"
-        />
+        android:onClick="sendOnChannel1"
+        android:text="Send on Channel 1" />
 
-    <EditText
-        android:id="@+id/edit_text_message"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:hint="Message"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="32dp" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send on Channel 1"
-        android:onClick="sendOnChannel1"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Send on Channel 2"
-        android:onClick="sendOnChannel2"/>
+        android:onClick="sendOnChannel2"
+        android:text="Send on Channel 2" />
 
     <Button
         android:id="@+id/button"
@@ -46,10 +33,12 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimary"
         android:text="@string/rescuesearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:textSize="18sp" />
 
 
     <ToggleButton
@@ -62,13 +51,15 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"
+        android:background="@color/colorMain"
+        android:capitalize="characters"
         android:textOff="@string/toggleoff"
         android:textOn="@string/toggleon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        tools:textSize="24sp" />
 
 
 </LinearLayout>
