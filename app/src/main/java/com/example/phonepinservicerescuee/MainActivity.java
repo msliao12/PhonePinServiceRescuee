@@ -12,8 +12,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_1_ID;
 import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_2_ID;
@@ -33,7 +36,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final MediaPlayer AlarmPlayer = MediaPlayer.create(this, R.raw.alarm);
+        AlarmPlayer.setLooping(true);
 
+        ToggleButton Searching = (ToggleButton) this.findViewById(R.id.toggleButton);
+        Searching.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    AlarmPlayer.start();
+                }else{
+                    AlarmPlayer.pause();
+
+                }
+            }
+        });
     }
 
 
