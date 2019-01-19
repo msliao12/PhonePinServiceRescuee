@@ -1,15 +1,27 @@
 package com.example.phonepinservicerescuee;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_1_ID;
+import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_2_ID;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+    private NotificationManagerCompat notificationManager;
+    private EditText editTextTitle;
+    private EditText editTextMessage;
 
 
 
@@ -38,7 +50,39 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        notificationManager =  NotificationManagerCompat.from(this);
+
+        editTextTitle = findViewById(R.id.edit_text_title);
+        editTextMessage = findViewById(R.id.edit_text_message);
+
         mTextMessage = (TextView) findViewById(R.id.message);
+    }
+
+    public void sendOnChannel1(View v){
+        String title = editTextTitle.getText().toString();
+        String message = editTextMessage.getText().toString();
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID).setSmallIcon(R.drawable.ic_one)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_ALARM)
+                .build();
+
+        notificationManager.notify( 1, notification );
+    }
+
+    public void sendOnChannel2(View v){
+        String title = editTextTitle.getText().toString();
+        String message = editTextMessage.getText().toString();
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
+                .setSmallIcon(R.drawable.ic_one)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_LOW)
+                .build();
+
+        notificationManager.notify( 2, notification );
+
     }
 
 }
