@@ -19,34 +19,17 @@
 
     <EditText
         android:id="@+id/edit_text_message"
-        android:layout_width="match_parent"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:hint="Message"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="32dp" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="395dp"
-        android:layout_height="9dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="16dp"
-        android:background="?android:attr/listDivider"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/toggleButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
     <Button
         android:id="@+id/button"
-        android:layout_width="367dp"
-        android:layout_height="332dp"
+        android:layout_width="335dp"
+        android:layout_height="94dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
@@ -62,8 +45,8 @@
 
     <ToggleButton
         android:id="@+id/toggleButton"
-        android:layout_width="361dp"
-        android:layout_height="329dp"
+        android:layout_width="336dp"
+        android:layout_height="match_parent"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
