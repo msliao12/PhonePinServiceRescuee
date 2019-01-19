@@ -53,21 +53,15 @@ public class MainActivity extends AppCompatActivity {
                     return true;
             }
             return false;
+
         }
     };
 
-
-
-    public void init(){
-        Button  btn = (Button) findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
-                startActivity(intent);
-            }
-        });
+    public void goToMap (View v){
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
     }
+
 
     public void sendOnChannel1(View v){
         //String title = editTextTitle.getText().toString();
