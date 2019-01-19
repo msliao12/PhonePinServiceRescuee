@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
 
     }
 
@@ -69,9 +69,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /*public void sendOnChannel1(View v){
-        String title = editTextTitle.getText().toString();
-        String message = editTextMessage.getText().toString();
+    public void sendOnChannel1(View v){
+        //String title = editTextTitle.getText().toString();
+        //String message = editTextMessage.getText().toString();
+        String title = "Priority 1";
+        String message = "Message 1";
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID).setSmallIcon(R.drawable.ic_one)
                 .setContentTitle(title)
                 .setContentText(message)
@@ -83,8 +85,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendOnChannel2(View v){
-        String title = editTextTitle.getText().toString();
-        String message = editTextMessage.getText().toString();
+        //String title = editTextTitle.getText().toString();
+        //String message = editTextMessage.getText().toString();
+        String title = "Priority 2";
+        String message = "Message 2";
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
                 .setSmallIcon(R.drawable.ic_one)
                 .setContentTitle(title)
@@ -94,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
         notificationManager.notify( 2, notification );
 
-    }*/
+    }
 
 
 
