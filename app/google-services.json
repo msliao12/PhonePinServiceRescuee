@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "607902669211",
+    "firebase_url": "https://phonepinservicerescuee.firebaseio.com",
+    "project_id": "phonepinservicerescuee",
+    "storage_bucket": "phonepinservicerescuee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607902669211:android:a7c66fcb63b18255",
+        "android_client_info": {
+          "package_name": "com.example.phonepinservicerescuee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607902669211-b5mus5huqanggoh3tpnff2pblf92gaea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.phonepinservicerescuee",
+            "certificate_hash": "ae7d76c2e2c91bcf4f1b81c53017f2467638a930"
+          }
+        },
+        {
+          "client_id": "607902669211-74ebvp25vb1g0tdvn4aontd1d765vntt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFtFrHL_vjKTBokNbYS3lPLemwOhDZVQg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "607902669211-3rhmlb6s2i236hk16q2h15ch8jgm95f8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
