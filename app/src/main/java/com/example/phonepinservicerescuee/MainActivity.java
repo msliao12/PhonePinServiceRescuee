@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
         notificationManager =  NotificationManagerCompat.from(this);
 
-        editTextTitle = findViewById(R.id.edit_text_title);
-        editTextMessage = findViewById(R.id.edit_text_message);
 
         mTextMessage = (TextView) findViewById(R.id.message);
     }

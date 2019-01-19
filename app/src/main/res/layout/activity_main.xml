@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
     android:padding="16dp"
     android:visibility="visible"
@@ -15,13 +15,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="sendOnChannel1"
-        android:text="Send on Channel 1" />
+        android:text="@string/yes" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="sendOnChannel2"
-        android:text="Send on Channel 2" />
+        android:text="@string/no" />
 
     <Button
         android:id="@+id/button"
@@ -35,6 +35,7 @@
         android:layout_marginBottom="8dp"
         android:background="@color/colorPrimary"
         android:text="@string/rescuesearch"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -52,7 +53,6 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"
         android:background="@color/colorMain"
-        android:capitalize="characters"
         android:textOff="@string/toggleoff"
         android:textOn="@string/toggleon"
         app:layout_constraintBottom_toBottomOf="parent"

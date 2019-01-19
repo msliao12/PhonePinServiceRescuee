@@ -6,4 +6,6 @@
     <string name="rescuesearch">Search For Survivors</string>
     <string name="toggleoff">Search for Help</string>
     <string name="toggleon">Searching...</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>
