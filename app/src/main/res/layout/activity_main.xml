@@ -52,7 +52,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"
-        android:background="@color/colorMain"
+        android:background="@color/colorSearch"
         android:textOff="@string/toggleoff"
         android:textOn="@string/toggleon"
         android:visibility="visible"
