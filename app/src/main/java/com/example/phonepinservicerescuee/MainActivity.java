@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private NotificationManagerCompat notificationManager;
-    //private EditText editTextTitle;
-    //private EditText editTextMessage;
+    private EditText editTextTitle;
+    private EditText editTextMessage;
 
 
     private static final String TAG = "MainActivity";
@@ -61,7 +61,10 @@ public class MainActivity extends AppCompatActivity {
     public void init(){
         Button  btn = (Button) findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
+            //
+            // public void doClick(int pressTime);
             @Override
+
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MapsActivity.class);
                 startActivity(intent);
@@ -70,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendOnChannel1(View v){
-        //String title = editTextTitle.getText().toString();
-        //String message = editTextMessage.getText().toString();
-        String title = "Priority 1";
-        String message = "Message 1";
+        String title = editTextTitle.getText().toString();
+        String message = editTextMessage.getText().toString();
+        //String title = "Priority 1";
+        //String message = "Message 1";
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID).setSmallIcon(R.drawable.ic_one)
                 .setContentTitle(title)
                 .setContentText(message)
@@ -85,10 +88,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendOnChannel2(View v){
-        //String title = editTextTitle.getText().toString();
-        //String message = editTextMessage.getText().toString();
-        String title = "Priority 2";
-        String message = "Message 2";
+        String title = editTextTitle.getText().toString();
+        String message = editTextMessage.getText().toString();
+        //String title = "Priority 2";
+        //String message = "Message 2";
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
                 .setSmallIcon(R.drawable.ic_one)
                 .setContentTitle(title)

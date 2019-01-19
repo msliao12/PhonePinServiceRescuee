@@ -14,9 +14,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00D0FF"
         android:onClick="sendOnChannel1"
-        android:text="@string/yes" />
+        android:text="@string/yes"
+        tools:background="#14DCDC" />
 
     <Button
         android:layout_width="match_parent"
