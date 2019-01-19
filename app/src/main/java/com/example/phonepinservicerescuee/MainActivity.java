@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
@@ -57,27 +56,17 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    public void init(){
-        Button  btn = (Button) findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            //
-            // public void doClick(int pressTime);
-            @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+        startActivity(intent);
+    }
 
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-    public void goToMap (View v){
+    public void goToMap(View v){
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
 
     }
-
-
-    public void sendOnChannel1(View v){
+    public void sendOnChannel1 (View v){
         String title = editTextTitle.getText().toString();
         String message = editTextMessage.getText().toString();
         //String title = "Priority 1";
@@ -89,10 +78,10 @@ public class MainActivity extends AppCompatActivity {
                 .setCategory(NotificationCompat.CATEGORY_ALARM)
                 .build();
 
-        notificationManager.notify( 1, notification );
+            notificationManager.notify(1, notification);
     }
 
-    public void sendOnChannel2(View v){
+    public void sendOnChannel2 (View v){
         String title = editTextTitle.getText().toString();
         String message = editTextMessage.getText().toString();
         //String title = "Priority 2";
@@ -104,11 +93,9 @@ public class MainActivity extends AppCompatActivity {
                 .setPriority(NotificationCompat.PRIORITY_LOW)
                 .build();
 
-        notificationManager.notify( 2, notification );
+        notificationManager.notify(2, notification);
 
     }
 
 
-
-}
-
+};
