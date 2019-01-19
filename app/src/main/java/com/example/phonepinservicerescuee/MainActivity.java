@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextTitle;
     private EditText editTextMessage;
 
+    
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
