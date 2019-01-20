@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "284055215393-n4junnrdj6k8mrk0bes9ffadp07j29rh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.phonepinservicerescuee",
+            "certificate_hash": "aedc807bd380be871dee4615e45a5289cde64de5"
+          }
+        },
+        {
           "client_id": "284055215393-epg8qrldjgngc3n9t1u1c3tlcs1oves5.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "284055215393-epg8qrldjgngc3n9t1u1c3tlcs1oves5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

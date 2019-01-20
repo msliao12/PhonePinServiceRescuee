@@ -9,20 +9,16 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.FirebaseApp;
 
-import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_1_ID;
 import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_2_ID;
 
 
@@ -30,13 +26,16 @@ import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_2_ID;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    public static final String SOUND = "sound";
     private TextView mTextMessage;
     private NotificationManagerCompat notificationManager;
     private EditText editTextTitle;
     private EditText editTextMessage;
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+
+
+
 
 
     private static final String TAG = "MainActivity";
@@ -46,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        FirebaseApp.initializeApp(this);
         final MediaPlayer AlarmPlayer = MediaPlayer.create(this, R.raw.alarm);
         AlarmPlayer.setLooping(true);
 
@@ -54,14 +55,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
+                    Log.d(SOUND, "Successful Toggle");
                     AlarmPlayer.start();
+
                 }else{
+                    Log.d(SOUND, "Toggle Off");
                     AlarmPlayer.pause();
 
                 }
             }
         });
+
     }
+
+
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
