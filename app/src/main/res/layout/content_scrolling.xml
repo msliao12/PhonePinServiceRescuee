@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="textStart"
-    android:visibility="visible"
+    android:visibility="invisible"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ScrollingActivity"
     tools:showIn="@layout/activity_scrolling">
@@ -16,6 +16,7 @@
         android:layout_margin="@dimen/text_margin"
         android:text="@string/large_text"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        tools:text="@string/large_text" />
 
 </android.support.v4.widget.NestedScrollView>
