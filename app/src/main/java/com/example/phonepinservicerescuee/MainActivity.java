@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         FirebaseApp.initializeApp(this);
         final MediaPlayer AlarmPlayer = MediaPlayer.create(this, R.raw.alarm);
         AlarmPlayer.setLooping(true);
@@ -66,6 +65,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        myToolbar.showOverflowMenu();
+        myToolbar.setTitleTextColor(R.color.colorMain);
 
     }
 

@@ -4,7 +4,6 @@
 
     <item
         android:id="@+id/navigation_about"
-        android:checkable="false"
         android:enabled="true"
         android:title="@string/about"
         android:visible="true" />
