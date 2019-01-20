@@ -42,6 +42,8 @@ import java.util.Map;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
+
+
 /**
  * A login screen that offers login via email/password.
  */
@@ -61,8 +63,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
     };
-    public static final String KEY = "Key";
-    public static final String KEY_2 = "Key2";
+    public static final String KEY = "Key3";
+    public static final String KEY_2 = "Key4";
     public static final String TAG = "TestSuccess";
 
 

@@ -34,7 +34,7 @@ import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_2_ID;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DocumentReference mRef = FirebaseFirestore.getInstance().document("SampleData/Test");
+    private DocumentReference mRef;
 
     public static final String SOUND = "sound";
     private TextView mTextMessage;
