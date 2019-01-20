@@ -12,21 +12,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 
-import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_1_ID;
 import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_2_ID;
 
 
@@ -34,7 +26,6 @@ import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_2_ID;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DocumentReference mRef;
 
     public static final String SOUND = "sound";
     private TextView mTextMessage;
