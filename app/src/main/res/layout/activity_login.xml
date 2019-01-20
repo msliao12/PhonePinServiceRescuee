@@ -85,12 +85,14 @@
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="167dp"
+                android:layout_height="wrap_content"
+                android:text="@string/about" />
+
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="167dp"
-        android:layout_height="wrap_content"
-        android:text="@string/about" />
+
 </LinearLayout>
