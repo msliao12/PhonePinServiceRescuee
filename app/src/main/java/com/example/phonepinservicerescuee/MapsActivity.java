@@ -4,24 +4,38 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    public static final String TAG = "Location Getter";
+    public static final String GET_DATA = "Get Data:";
+    public static final String LONG = "Long";
+    public static final String LAT = "Lat";
     private int LOCATION_PERMISSION_CODE = 1;
     private GoogleMap mMap;
+    private FusedLocationProviderClient client;
+    private FirebaseFirestore mCollect = FirebaseFirestore.getInstance();
 
 
     @Override
@@ -32,6 +46,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        client = LocationServices.getFusedLocationProviderClient(this);
     }
 
 
@@ -44,6 +59,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
@@ -64,6 +82,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         }
 
+        mCollect.collection("Geodata")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d(GET_DATA, "Successful");
+                                double lon = document.getDouble(LONG);
+                                double lat = document.getDouble(LAT);
+                                LatLng Mark = new LatLng(lon,lat);
+                                mMap.addMarker(new MarkerOptions().position(Mark).title("Rescue Spot 1"));
+                            }
+                        }else{
+                            Toast.makeText(MapsActivity.this, "Document Access Issues", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
+
 
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
@@ -72,7 +110,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    private void requestLocationPermission(){
+
+    public void requestLocationPermission(){
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION)){
             new AlertDialog.Builder(this)
                     .setTitle("Location Permission Needed")
