@@ -18,6 +18,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_1_ID;
 import static com.example.phonepinservicerescuee.AppChannel.CHANNEL_2_ID;
 
@@ -27,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     private NotificationManagerCompat notificationManager;
     private EditText editTextTitle;
     private EditText editTextMessage;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("message");
 
 
     private static final String TAG = "MainActivity";
@@ -74,10 +81,6 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    public void onClick(View v) {
-        Intent intent = new Intent(MainActivity.this, MapsActivity.class);
-        startActivity(intent);
-    }
 
     public void goToMap(View v){
         Intent intent = new Intent(this, MapsActivity.class);
