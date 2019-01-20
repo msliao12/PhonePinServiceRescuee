@@ -83,12 +83,4 @@
 
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="385dp"
-        android:onClick="testSave"
-        android:text="@string/toggleoff" />
-
 </LinearLayout>
