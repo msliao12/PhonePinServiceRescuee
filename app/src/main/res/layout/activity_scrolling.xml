@@ -31,7 +31,7 @@
             android:fitsSystemWindows="true"
             app:contentScrim="@color/colorAccent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar">
+            app:toolbarId="@+id/my_toolbar">
 
             <ImageView
                 android:id="@+id/imageView5"

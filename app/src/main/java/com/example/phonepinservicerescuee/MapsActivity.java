@@ -12,8 +12,6 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -35,7 +33,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public static final String LAT = "Lat";
     private int LOCATION_PERMISSION_CODE = 1;
     private GoogleMap mMap;
-    private FusedLocationProviderClient client;
     private FirebaseFirestore mCollect = FirebaseFirestore.getInstance();
 
 
@@ -47,7 +44,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        client = LocationServices.getFusedLocationProviderClient(this);
     }
 
 
@@ -66,8 +62,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-
-
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN  );
 
@@ -82,13 +76,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         }
-
         mCollect.collection("Geodata")
                 .get()
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-
+                        Log.w("Error", "Error with Document Loading" + e.toString());
                     }
                 })
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
