@@ -7,44 +7,52 @@
     android:fitsSystemWindows="true"
     tools:context=".ScrollingActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorApp"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:titleTextColor="@color/colorMain" />
+        android:layout_height="match_parent">
 
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
-        android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="@color/colorAccent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar">
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme" />
 
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="174dp"
                 android:adjustViewBounds="true"
+                android:background="@color/colorPrimary"
                 android:contentDescription="@string/meshpng"
                 app:srcCompat="@mipmap/about_main"
                 tools:paddingLeft="@dimen/activity_horizontal_margin" />
 
-        </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text="@string/large_text"
+                android:textColor="@color/colorMain"
+                android:textSize="24sp" />
 
-    <include layout="@layout/content_scrolling" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text="@string/large_text1"
+                android:textColor="@color/colorMain"
+                android:textSize="24sp" />
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.design.widget.CoordinatorLayout>
