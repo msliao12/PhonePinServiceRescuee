@@ -27,10 +27,14 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="83dp" />
+
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="281dp">
+        android:layout_height="323dp">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -45,7 +49,7 @@
                 <AutoCompleteTextView
                     android:id="@+id/email"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
@@ -60,7 +64,7 @@
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:autofillHints=""
                     android:hint="@string/prompt_password"
                     android:imeActionId="6"
@@ -76,11 +80,17 @@
                 android:id="@+id/email_sign_in_button"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:text="@string/about" />
 </LinearLayout>
