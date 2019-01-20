@@ -18,6 +18,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -83,6 +84,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -208,8 +210,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     public void testSave(View v){
-        String test = "Test";
-        String SecondData = "Test2";
+        String test = "Hey hey";
+        String SecondData = "Poo Poo";
         Map<String, Object> dataToSave = new HashMap<String, Object>();
         dataToSave.put(KEY, test);
         dataToSave.put(KEY_2, SecondData);
