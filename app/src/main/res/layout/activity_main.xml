@@ -15,16 +15,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="sendOnChannel1"
-        android:text="@string/yes"
-        tools:background="#14DCDC" />
+        android:text="@string/yes" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:onClick="sendOnChannel2"
-        android:text="@string/no"
-        tools:background="@color/colorSearch" />
+        android:text="@string/no" />
 
     <Button
         android:id="@+id/button"
@@ -36,10 +34,10 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/design_default_color_primary"
+        android:onClick="goToMap"
         android:text="@string/rescuesearch"
         android:textColor="@color/colorMain"
-        android:onClick="goToMap"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
