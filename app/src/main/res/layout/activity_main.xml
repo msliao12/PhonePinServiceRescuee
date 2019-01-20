@@ -14,8 +14,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="sendOnChannel1"
-        android:text="@string/yes" />
+        android:onClick="goToLogin"
+        android:text="Login"
+        android:id="@+id/Login"/>
 
     <Button
         android:id="@+id/button"

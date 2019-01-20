@@ -87,21 +87,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-    public void sendOnChannel1 (View v){
-        String title = editTextTitle.getText().toString();
-        String message = editTextMessage.getText().toString();
-        //String title = "Priority 1";
-        //String message = "Message 1";
-        Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID).setSmallIcon(R.drawable.ic_one)
-                .setContentTitle(title)
-                .setContentText(message)
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setCategory(NotificationCompat.CATEGORY_ALARM)
-                .build();
 
-            notificationManager.notify(1, notification);
+    public void goToLogin(View v){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
-
     public void sendOnChannel2 (View v){
         String title = editTextTitle.getText().toString();
         String message = editTextMessage.getText().toString();
