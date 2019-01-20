@@ -19,6 +19,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,8 +30,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -38,6 +46,8 @@ import static android.Manifest.permission.READ_CONTACTS;
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+
+    private DocumentReference mRef = FirebaseFirestore.getInstance().document("SampleData/Test");
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -51,6 +61,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
     };
+    public static final String KEY = "Key";
+    public static final String KEY_2 = "Key2";
+    public static final String TAG = "TestSuccess";
+
+
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -189,6 +204,29 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask.execute((Void) null);
         }
     }
+
+    public void testSave(View v){
+        String test = "Test";
+        String SecondData = "Test2";
+        Map<String, Object> dataToSave = new HashMap<String, Object>();
+        dataToSave.put(KEY, test);
+        dataToSave.put(KEY_2, SecondData);
+
+        mRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+
+                Log.d(TAG,"Document has been saved!");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG,"Failed",e);
+            }
+        });
+    }
+
+
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
